@@ -1,6 +1,7 @@
-using WebApplication1.Models;
 using System.Collections.Generic;
-namespace WebApplication1.Infrastructure.Repositories;
+using BlogApplication.Models;
+
+namespace BlogApplication.Infrastructure.Repositories;
 
 public interface IUsersRepository
 {

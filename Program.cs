@@ -1,4 +1,4 @@
-using WebApplication1.Infrastructure.Repositories;
+using BlogApplication.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

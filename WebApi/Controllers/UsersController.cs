@@ -1,8 +1,8 @@
+using BlogApplication.Infrastructure.Repositories;
+using BlogApplication.Models;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Infrastructure.Repositories;
-using WebApplication1.Models;
 
-namespace WebApplication1.Controllers;
+namespace BlogApplication.Controllers;
 
 
 [ApiController]
