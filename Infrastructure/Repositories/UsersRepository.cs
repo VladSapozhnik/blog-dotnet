@@ -1,25 +1,17 @@
-using System.Collections.Generic;
-using BlogApplication.Models;
+using BlogApplication.Domain.Entities;
+using BlogApplication.Domain.Interfaces;
 
 namespace BlogApplication.Infrastructure.Repositories;
-
-public interface IUsersRepository
+public class UsersRepository: IUserRepository
 {
-    void CreateUser(CreateUserDto model);
-    IEnumerable<CreateUserDto> GetUsers();
-    Guid RemoveUser(Guid id);
-}
+    private static readonly List<UserEntity> _users = new List<UserEntity>();
 
-public class UsersRepository: IUsersRepository
-{
-    private static readonly List<CreateUserDto> _users = new List<CreateUserDto>();
-
-    public void CreateUser(CreateUserDto model)
+    public void CreateUser(UserEntity newUser)
     {
-        _users.Add(model);
+        _users.Add(newUser);
     }
 
-    public IEnumerable<CreateUserDto> GetUsers ()
+    public IEnumerable<UserEntity> GetUsers ()
     {
         return _users;
     }

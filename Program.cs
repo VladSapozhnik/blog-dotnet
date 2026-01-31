@@ -1,10 +1,12 @@
 using BlogApplication.Infrastructure.Repositories;
+using BlogApplication.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IUsersRepository, UsersRepository>();
+builder.Services.AddSingleton<IUserRepository, UsersRepository>();
+builder.Services.AddSingleton<IBlogRepository, BlogsRepository>();
 
 var app = builder.Build();
 

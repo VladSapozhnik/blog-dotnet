@@ -1,4 +1,5 @@
-using BlogApplication.Infrastructure.Repositories;
+using BlogApplication.Domain.Entities;
+using BlogApplication.Domain.Interfaces;
 using BlogApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,9 +10,9 @@ namespace BlogApplication.WebApi.Controllers;
 [Route("users")]
 public class UsersController : Controller
 {
-    private readonly IUsersRepository _usersRepository;
+    private readonly IUserRepository _usersRepository;
 
-    public UsersController(IUsersRepository usersRepository)
+    public UsersController(IUserRepository usersRepository)
     {
         _usersRepository = usersRepository;
     }
@@ -23,8 +24,14 @@ public class UsersController : Controller
     public IActionResult CreateUser([FromForm] CreateUserDto model) 
     {
         if (!ModelState.IsValid)
-            return View("Registration", model); 
-        _usersRepository.CreateUser(model);
+            return View("Registration", model);
+        var newUser = new UserEntity
+        {
+            UserName = model.UserName,
+            Password = model.Password,
+        };
+        
+        _usersRepository.CreateUser(newUser);
 
         return View("UserCreated", model);
     }
