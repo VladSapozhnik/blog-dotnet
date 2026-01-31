@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "projectName": "WebApplication1",
-      "projectPath": "D:\\Projects\\net\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\Projects\\net\\WebApplication1\\BlogApplication\\BlogApplication.csproj",
+      "projectName": "BlogApplication",
+      "projectPath": "D:\\Projects\\net\\WebApplication1\\BlogApplication\\BlogApplication.csproj",
       "packagesPath": "C:\\Users\\vladb\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\net\\WebApplication1\\WebApplication1\\obj\\",
+      "outputPath": "D:\\Projects\\net\\WebApplication1\\BlogApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vladb\\AppData\\Roaming\\NuGet\\NuGet.Config"

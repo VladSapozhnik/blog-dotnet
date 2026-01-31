@@ -2,7 +2,7 @@ using BlogApplication.Infrastructure.Repositories;
 using BlogApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BlogApplication.Controllers;
+namespace BlogApplication.WebApi.Controllers;
 
 
 [ApiController]
@@ -34,5 +34,13 @@ public class UsersController : Controller
     {
         var users = _usersRepository.GetUsers();
         return Ok(users);
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteUser(Guid id)
+    {
+        var removeUserId = _usersRepository.RemoveUser(id);
+        
+        return Ok(removeUserId);
     }
 }
